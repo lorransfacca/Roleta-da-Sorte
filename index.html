@@ -1,0 +1,269 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta de Números</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .roleta {
+        text-align: center;
+    }
+
+    .bolas {
+        display: inline-block;
+        font-size: 24px;
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid #333;
+        border-radius: 10px;
+    }
+
+    .vermelha {
+        color: red;
+    }
+
+    .amarela {
+        color: yellow;
+    }
+
+    .verde {
+        color: green;
+    }
+
+    .marrom {
+        color: brown;
+    }
+
+    .azul {
+        color: blue;
+    }
+
+    .rosa {
+        color: pink;
+    }
+
+    .preto {
+        color: black;
+    }
+
+    .cinza {
+        color: gray;
+    }
+
+    .laranja {
+        color: orange;
+    }
+
+    .branca {
+        color: white;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="roleta">
+        <div class="bolas" id="bolas"></div>
+        <button onclick="girarRoleta()">Girar Roleta</button>
+    </div>
+</body>
+
+<script>
+    function girarRoleta() {
+        // Gera uma lista com números de 1 a 80
+        let numeros = Array.from({ length: 25 }, (_, i) => i + 1);
+
+        // Embaralha a lista para simular a rotação da roleta
+        numeros.sort(() => Math.random() - 0.5);
+
+        // Seleciona os primeiros 15 números da lista, que representam as bolas na roleta
+        let bolas = numeros.slice(0, 15);
+
+        // Mapeia os números para suas respectivas cores
+        let bolasComCores = bolas.map(numero => {
+            return obterCor(numero) + numero;
+        });
+
+        exibirResultado(bolasComCores);
+    }
+
+    function obterCor(numero) {
+        switch (numero % 10) {
+            case 1:
+                return 'vermelha ';
+            case 2:
+                return 'amarela ';
+            case 3:
+                return 'verde ';
+            case 4:
+                return 'marrom ';
+            case 5:
+                return 'azul ';
+            case 6:
+                return 'rosa ';
+            case 7:
+                return 'preto ';
+            case 8:
+                return 'cinza ';
+            case 9:
+                return 'laranja ';
+            case 0:
+                return 'branca ';
+            default:
+                return '';
+        }
+    }
+
+    function exibirResultado(bolas) {
+        let resultadoDiv = document.getElementById("bolas");
+        resultadoDiv.innerHTML = "Números sorteados na roleta: " + bolas.join(", ");
+    }
+</script>
+
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta de Números</title>
+</head>
+<style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color:#FFD700;
+  font-size:30px solid;
+  background-color: cornflowerblue;
+}
+
+.bolas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px;
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
+}
+
+.red { background-color: red; }
+.yellow { background-color: yellow; }
+.green { background-color: green; }
+.brown { background-color: brown; }
+.blue { background-color: blue; }
+.fuchsia { background-color:fuchsia; }
+.black { background-color: black; }
+.gray { background-color: gray; }
+.orange { background-color: orange; }
+.white { background-color: white; }
+
+.roleta {
+  text-align: center;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+</style>
+<body>
+    <div class="roleta">
+        <div class="bolas" id="bolas"></div>
+        <br>
+        <button onclick="girarRoleta()">Girar Roleta</button>
+    </div>
+    <script>
+        function girarRoleta() {
+    // Gera uma lista com números de 1 a 80
+    let numeros = Array.from({ length: 25 }, (_, i) => i + 1);
+
+    // Embaralha a lista para simular a rotação da roleta
+    numeros.sort(() => Math.random() - 0.5);
+
+    // Seleciona os primeiros 15 números da lista, que representam as bolas na roleta
+    let bolas = numeros.slice(0, 15);
+
+    // Mapeia os números para suas respectivas cores
+    let bolasComCores = bolas.map(numero => {
+        return obterCor(numero) + numero;
+    });
+
+    exibirResultado(bolasComCores);
+}
+
+function obterCor(numero) {
+    switch (numero % 10) {
+        case 1:
+            return 'red ';
+        case 2:
+            return 'yellow ';
+        case 3:
+            return 'green ';
+        case 4:
+            return 'brown ';
+        case 5:
+            return 'blue ';
+        case 6:
+            return 'fuchsia ';
+        case 7:
+            return 'black ';
+        case 8:
+            return 'gray ';
+        case 9:
+            return 'orange ';
+        case 0:
+            return 'white ';
+        default:
+            return '';
+    }
+}
+
+function exibirResultado(bolas) {
+    let resultadoDiv = document.getElementById("bolas");
+    resultadoDiv.innerHTML = "";
+    
+    bolas.forEach(corNumero => {
+        const [cor, numero] = corNumero.trim().split(" ");
+        const ball = document.createElement("div");
+        ball.classList.add("ball", cor);
+        ball.textContent = numero < 10 ? "0" + numero : numero;
+        resultadoDiv.appendChild(ball);
+    });
+}
+
+    </script>
+</body>
+</html>
